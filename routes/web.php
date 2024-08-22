@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ComentController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RatingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('product',ProductController::class);
+Route::resource('rating',RatingController::class);
+Route::resource('category',CategoryController::class);
+Route::resource('comment',CommentController::class);
+

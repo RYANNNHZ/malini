@@ -9,7 +9,7 @@ class coment extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['coment_id','created_at','updated_at'];
+    protected $guarded = ['id','created_at','updated_at'];
 
     public function user(){
         return $this->belongsTo(User::class);

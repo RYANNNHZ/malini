@@ -21,7 +21,7 @@ return new class extends Migration
             ->constrained()
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->integer('rating_value');
+            $table->enum('rating_value',[1,2,3,4,5]);
             $table->timestamps();
         });
     }

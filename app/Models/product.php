@@ -9,7 +9,7 @@ class product extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['product_id','created_at','updated_at'];
+    protected $guarded = ['id','created_at','updated_at'];
 
     public function coments(){
         return $this->hasMany(coment::class);
