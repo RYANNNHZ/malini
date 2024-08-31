@@ -75,27 +75,32 @@ class DatabaseSeeder extends Seeder
         product::create([
             'product_name' => 'kopi janji jiwa',
             'description' => 'kopi asoy geboy enaken buat ngods',
-            'price' => 20000
+            'price' => 20000,
+            'image_url' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//99/MTA-8119395/kopi-janji-jiwa_kopi-janji-jiwa_full01.jpg'
         ]);
         product::create([
             'product_name' => 'kopi kenangan',
             'description' => 'kopi seger nikmat enaken buat ngods',
-            'price' => 15000
+            'price' => 15000,
+            'image_url' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC9rkwbNEwRPKsNxW_0v0nHomEloEZPIlkY1jQXnpYzLgsaE9hVIAs1Kf5pwQNA1G8D7Q&usqp=CAU'
         ]);
         product::create([
-            'product_name' => 'tela tela singkong',
-            'description' => 'tela tela manis gurih',
-            'price' => 5000
+            'product_name' => 'bread toast',
+            'description' => 'bread toast manis gurih',
+            'price' => 5000,
+            'image_url' => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzJ1R7xow_PctocrMnkHtb8KlYfw9s9Lm9XamU_FUOQFn5UAHsDq3vDfdNVmNYri8ZB5E&usqp=CAU"
         ]);
         product::create([
-            'product_name' => 'stuff roti creamy',
-            'description' => 'stuff roti dengan whif cream yang creamy',
-            'price' => 10000
+            'product_name' => 'chesee bread',
+            'description' => 'chesee dengan whif cream yang creamy',
+            'price' => 10000,
+            'image_url' => 'https://media-cdn.yummyadvisor.com/store/8fe8c189-9ca2-484e-b9ef-5d081195a33e.jpg?x-oss-process=style/type_4'
         ]);
         product::create([
-            'product_name' => 'mie gacoan mantap',
-            'description' => 'mie gacoan manis gurih',
-            'price' => 13000
+            'product_name' => 'sangobox',
+            'description' => ' sango box manis gurih',
+            'price' => 13000,
+            'image_url' => 'https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/a7a82323-a209-44ec-bd31-57d142a4ae30_menu-item-image_1724655446226.jpg'
         ]);
 
         //product_category seeder create relation product_category
