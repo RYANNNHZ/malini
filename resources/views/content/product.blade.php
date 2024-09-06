@@ -28,9 +28,14 @@
                 <div class="col-12 col-md-12 col-lg-6">
                     <div class="card text-start rounded-4 p-3">
                         {{-- <img class="card-img-top" src="{{ $product->image_url }}" alt="Title" /> --}}
-                        <div class="card-body">
+                        <div class="card-body d-flex">
                             <h4 class="card-title">{{ $product->product_name }}</h4>
-                            <p class="card-text">Body</p>
+                            @foreach ($product->ratings as $rating)
+                            <div class="btn btn-warning"><?php
+                             $ratings[] = $rating->rating_value;
+                             echo $ratings
+                            ?></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

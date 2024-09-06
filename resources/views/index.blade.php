@@ -14,7 +14,7 @@
 
 <body>
 
-    {{-- @include('partials.nav') --}}
+    @include('partials.nav')
     @yield('content')
     <script src="{{ url('js') . '/popper.min.js' }}"></script>
     <script src="{{ url('js') . '/bootstrap.js' }}"></script>
