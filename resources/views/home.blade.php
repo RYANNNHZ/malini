@@ -9,9 +9,10 @@
     <link rel="shortcut icon" href="/images/icons/roti.png" type="image/x-icon">
     <link rel="stylesheet" href="{{ url('css') . '/bootstrap.css' }}">
     <link rel="stylesheet" href="{{ url('icon') . '/font/bootstrap-icons.css' }}">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    {{-- @include('components.nav') --}}
+    @include('partials.nav')
     @yield('content')
     <script src="{{ url('js') . '/popper.min.js' }}"></script>
     <script src="{{ url('js') . '/bootstrap.js' }}"></script>
