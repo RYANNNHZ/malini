@@ -33,7 +33,7 @@
                                 <i class="fa fa-user"></i> Username
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="/users"><i class="fa fa-user"></i> Profile</a></li>
 
                             <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
                             <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
@@ -58,16 +58,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link {{ $header == 'products' ? 'bg-dark text-light' : ''  }}" href="/product">home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">All Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Best product</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Appliances</a>
+                       <a class="nav-link {{ $header == 'categories' ? 'bg-dark text-light' : ''  }}" href="/category">All Categories</a>
                     </li>
                 </ul>
             </div>

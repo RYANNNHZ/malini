@@ -3,16 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
-class ProductController extends Controller
+
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = product::all();
-        return view('content.products')->with(['header'=> 'products','products' => $products]);
+        return view('content.profile');
     }
 
     /**
@@ -36,8 +35,7 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        $product = Product::find($id);
-        return view('content.product')->with(['product' => $product]);
+        //
     }
 
     /**

@@ -58,16 +58,20 @@ class DatabaseSeeder extends Seeder
         //categories seeder create category
 
         category::create([
-            'category_name' => 'makanan_ringan'
+            'category_name' => 'makanan ringan',
+            'image_url' => 'https://img.freepik.com/free-photo/top-view-delicious-fries-sauce_23-2149235944.jpg?w=360&t=st=1726114065~exp=1726114665~hmac=98da22e54b7cb73e18299c769bb1bbd8b073dacbd5d7304a2fdf290a466ed799'
         ]);
         category::create([
-            'category_name' => 'makanan_berat'
+            'category_name' => 'makanan berat',
+            'image_url' => 'https://img.freepik.com/free-photo/macaroni-with-cheese-chicken-mushrooms-baked-oven_2829-11120.jpg?t=st=1726115592~exp=1726119192~hmac=c18d96e40f458571c4684a8a60f00fa924d47aac6e21599507474f30f489daf4&w=360'
         ]);
         category::create([
-            'category_name' => 'desert'
+            'category_name' => 'dessert',
+            'image_url' => "https://img.freepik.com/free-photo/top-view-assortment-donuts-with-waffles-chocolate_23-2148526480.jpg?ga=GA1.1.900510402.1726533843&semt=ais_hybrid"
         ]);
         category::create([
-            'category_name' => 'minuman'
+            'category_name' => 'minuman',
+            'image_url' => "https://img.freepik.com/free-photo/delicious-cappuccino-coffee_144627-30474.jpg?ga=GA1.1.900510402.1726533843&semt=ais_hybrid"
         ]);
 
         //product seeder create product
@@ -204,6 +208,11 @@ class DatabaseSeeder extends Seeder
             'product_id' => 5,
             'user_id' => 2,
             'coment_text' => 'mie nya gurih banget cuyyyy'
+        ]);
+        coment::create([
+            'product_id' => 1,
+            'user_id' => 3,
+            'coment_text' => 'kopi aren nya gurih banget cuyyyy'
         ]);
     }
 }
