@@ -15,4 +15,6 @@ class category extends Model
         return $this->belongsToMany(product::class,'product_categories');
     }
 
+    
+
 }

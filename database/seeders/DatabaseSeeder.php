@@ -8,6 +8,7 @@ use App\Models\category;
 use App\Models\coment;
 use App\Models\product;
 use App\Models\product_category;
+use App\Models\product_user;
 use App\Models\rating;
 use App\Models\User;
 use Egulias\EmailValidator\Parser\Comment;
@@ -214,5 +215,18 @@ class DatabaseSeeder extends Seeder
             'user_id' => 3,
             'coment_text' => 'kopi aren nya gurih banget cuyyyy'
         ]);
+
+        product_user::create([
+            'product_id' => 1,
+            'user_id' => 2,
+            'is_checkout' => true
+        ]);
+
+        product_user::create([
+            'product_id' => 2,
+            'user_id' => 3,
+            'is_checkout' => true
+        ]);
+
     }
 }

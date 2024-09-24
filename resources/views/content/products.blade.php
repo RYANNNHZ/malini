@@ -50,8 +50,6 @@
                                             <div class="">
                                                 <a class=" btn btn-dark text-light rounded-5"
                                                     href="/product/{{ $product->id }}"><i class="bi bi-cart-fill"></i></a>
-                                                <a class=" btn btn-dark text-light rounded-5" href=""><i
-                                                        class="bi bi-bookmark-fill"></i></a>
                                             </div>
 
                                         </div>

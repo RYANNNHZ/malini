@@ -10,7 +10,9 @@
                 <h5 class="">Rafee.<i class="bi bi-cup-fill"></i></h5>
             </div>
             <div class="col-4 text-end wrapper-bookmark">
-                <a class="btn btn-light text-dark rounded-5" href=""><i class="bi bi-bookmark-fill"></i></a>
+                @foreach ($product->categories as $category)
+                    <a class="btn btn-light text-dark rounded-5 fw-bold" href="">{{ $category->category_name }}</a>
+                @endforeach
             </div>
         </div>
         <div class="row">
@@ -34,14 +36,18 @@
                             <p style="background-color: " class="text-secondary">{{ $product->description }}</p>
                         </div>
                         <div class="wrapper-rating w-50 d-inline-block">
+                            @php
+                                $ratings = $product->ratings->pluck('rating_value')->toArray(); // Mengambil nilai rating dari collection
+                                $sum = array_sum($ratings);
+                                $count = count($ratings);
+                                $mean = $count > 0 ? $sum / $count : 0; // Pastikan tidak terjadi pembagian dengan nol
+                            @endphp
 
-                            <p style="background-color:#ffeecb; color:#EB9B00; "
-                                class="text-warning ms-auto px-2 w-50 w-md-100 text-center rounded-5">5 <i
-                                    class="bi bi-star-fill"></i></p>
-
-                            @foreach ($product->categories as $category)
-                                <p class="text-secondary text-end">{{ $category->category_name }}</p>
-                            @endforeach
+                            <p style="background-color:#ffeecb; color:#EB9B00;"
+                                class="text-warning ms-auto px-2 w-50 w-md-100 text-center rounded-5">
+                                {{ round($mean, 1) }} {{-- Menampilkan hasil rata-rata dengan 1 angka di belakang koma --}}
+                                <i class="bi bi-star-fill"></i>
+                            </p>
                         </div>
                     </div>
                     <div class="card-body d-block d-md-flex">
@@ -58,37 +64,40 @@
                 </div>
 
 
-                    <div class="col-12 col-md-12 col-lg-12 my-2">
-                      <div class="card shadow-0 border rounded-4" >
+                <div class="col-12 col-md-12 col-lg-12 my-2">
+                    <div class="card shadow-0 border rounded-4">
                         <div class="card-body p-4">
-                          <div data-mdb-input-init class="form-outline mb-4">
-                            {{-- <input type="text" id="addANote" class="form-control" placeholder="Type comment..." /> --}}
-                            <textarea name="" class="form-control" placeholder="type comment..." id="" cols="10" rows="3"></textarea>
-                            <a href="" class="btn btn-dark my-3">add comment</a>
-                          </div>
-
-                          @foreach ($product->coments as $comment)
-                          <div class="card mb-4 rounded-4">
-                            <div class="card-body rounded-4" style="background-color: #f0f2f5;">
-                              <p>{{ $comment->coment_text }}</p>
-                              <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                  <img src="https://avatar.iran.liara.run/public" alt="avatar" width="25"
-                                    height="25" />
-                                  <p class="small mb-0 ms-2">{{ $comment->user->username }}</p>
-                                </div>
-                                <div class="d-flex flex-row align-items-center">
-                                  <i class="far fa-thumbs-up mx-2 fa-xs text-body" style="margin-top: -0.16rem;"></i>
-                                  <p class="small text-muted mb-0">{{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}</p>
-                                </div>
-                              </div>
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                {{-- <input type="text" id="addANote" class="form-control" placeholder="Type comment..." /> --}}
+                                <textarea name="" class="form-control" placeholder="type comment..." id="" cols="10"
+                                    rows="3"></textarea>
+                                <a href="" class="btn btn-dark my-3">add comment</a>
                             </div>
-                          </div>
-                          @endforeach
+
+                            @foreach ($product->coments as $comment)
+                                <div class="card mb-4 rounded-4">
+                                    <div class="card-body rounded-4" style="background-color: #f0f2f5;">
+                                        <p>{{ $comment->coment_text }}</p>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="d-flex flex-row align-items-center">
+                                                <img src="https://avatar.iran.liara.run/public" alt="avatar"
+                                                    width="25" height="25" />
+                                                <p class="small mb-0 ms-2">{{ $comment->user->username }}</p>
+                                            </div>
+                                            <div class="d-flex flex-row align-items-center">
+                                                <i class="far fa-thumbs-up mx-2 fa-xs text-body"
+                                                    style="margin-top: -0.16rem;"></i>
+                                                <p class="small text-muted mb-0">
+                                                    {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
 
                         </div>
-                      </div>
                     </div>
+                </div>
 
 
             </div>
