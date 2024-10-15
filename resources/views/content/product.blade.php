@@ -11,7 +11,7 @@
             </div>
             <div class="col-4 text-end wrapper-bookmark">
                 @foreach ($product->categories as $category)
-                    <a class="btn btn-light text-dark rounded-5 fw-bold" href="">{{ $category->category_name }}</a>
+                    <a class="btn btn-light text-dark rounded-5 fw-bold" href="/category/{{ $category->id }}">{{ $category->category_name }}</a>
                 @endforeach
             </div>
         </div>

@@ -59,53 +59,54 @@ class DatabaseSeeder extends Seeder
         //categories seeder create category
 
         category::create([
-            'category_name' => 'makanan ringan',
-            'image_url' => 'https://img.freepik.com/free-photo/top-view-delicious-fries-sauce_23-2149235944.jpg?w=360&t=st=1726114065~exp=1726114665~hmac=98da22e54b7cb73e18299c769bb1bbd8b073dacbd5d7304a2fdf290a466ed799'
+            'category_name' => 'fresh',
+            'image_url' => 'https://i.pinimg.com/564x/8e/cd/45/8ecd4551c8a6e776c639174f453d8234.jpg'
         ]);
         category::create([
-            'category_name' => 'makanan berat',
-            'image_url' => 'https://img.freepik.com/free-photo/macaroni-with-cheese-chicken-mushrooms-baked-oven_2829-11120.jpg?t=st=1726115592~exp=1726119192~hmac=c18d96e40f458571c4684a8a60f00fa924d47aac6e21599507474f30f489daf4&w=360'
+            'category_name' => 'sweet',
+            'image_url' => 'https://i.pinimg.com/564x/1c/a2/94/1ca2943ef4109589b426d6a213bcfaac.jpg'
         ]);
         category::create([
-            'category_name' => 'dessert',
-            'image_url' => "https://img.freepik.com/free-photo/top-view-assortment-donuts-with-waffles-chocolate_23-2148526480.jpg?ga=GA1.1.900510402.1726533843&semt=ais_hybrid"
+            'category_name' => 'woody',
+            'image_url' => "https://i.pinimg.com/564x/66/3f/99/663f99a41af86d694a90c69818991047.jpg"
         ]);
         category::create([
-            'category_name' => 'minuman',
-            'image_url' => "https://img.freepik.com/free-photo/delicious-cappuccino-coffee_144627-30474.jpg?ga=GA1.1.900510402.1726533843&semt=ais_hybrid"
+            'category_name' => 'Floral',
+            'image_url' => "https://i.pinimg.com/enabled_hi/564x/16/65/8b/16658b2f6e3240b3fd9a20627621df5b.jpg"
         ]);
 
         //product seeder create product
 
         product::create([
-            'product_name' => 'kopi janji jiwa',
-            'description' => 'kopi asoy geboy enaken buat ngods',
-            'price' => 20000,
-            'image_url' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//99/MTA-8119395/kopi-janji-jiwa_kopi-janji-jiwa_full01.jpg'
+            'product_name' => 'Saff & Co s.o.t.b mini',
+            'description' => 'a flower fragrant',
+            'price' => 45000,
+            'image_url' => 'https://api.watsons.co.id/medias/prd-front-35863.jpg?context=bWFzdGVyfGltYWdlc3wzNjkyMXxpbWFnZS9qcGVnfGFEaG1MMmhoTnk4eE1qUTBPRGd4T0RjeU5EZzVOQzlYVkVOSlJDMHpOVGcyTXkxbWNtOXVkQzVxY0djfDA1MDA4YTUxNWY0NzQzOThhNzgwNTc4NGJjNGM5ZDkyZDM2MGRiOWFkNDMwY2Y3NWJiZDJiMDA4YWI5MDQ4Mzc'
         ]);
         product::create([
-            'product_name' => 'kopi kenangan',
-            'description' => 'kopi seger nikmat enaken buat ngods',
-            'price' => 15000,
-            'image_url' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC9rkwbNEwRPKsNxW_0v0nHomEloEZPIlkY1jQXnpYzLgsaE9hVIAs1Kf5pwQNA1G8D7Q&usqp=CAU'
+            'product_name' => 'Saff & Co chno mini',
+            'description' => 'a flora things here',
+            'price' => 45000,
+            'image_url' => "https://www.beautyhaul.com/assets/uploads/products/thumbs/800x800/CHNO__1_-removebg-preview.png"
         ]);
         product::create([
-            'product_name' => 'bread toast',
-            'description' => 'bread toast manis gurih',
-            'price' => 5000,
-            'image_url' => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzJ1R7xow_PctocrMnkHtb8KlYfw9s9Lm9XamU_FUOQFn5UAHsDq3vDfdNVmNYri8ZB5E&usqp=CAU"
+            'product_name' => 'Saff & Co solaris mini',
+            'description' => 'fresh things come on',
+            'price' => 45000,
+            'image_url' => 'https://hglhouse.com/cdn/shop/files/id-11134207-7qul2-lgorwps1p3u39a.jpg?v=1715238026&width=2048'
         ]);
         product::create([
-            'product_name' => 'chesee bread',
-            'description' => 'chesee dengan whif cream yang creamy',
-            'price' => 10000,
-            'image_url' => 'https://media-cdn.yummyadvisor.com/store/8fe8c189-9ca2-484e-b9ef-5d081195a33e.jpg?x-oss-process=style/type_4'
+            'product_name' => 'Saff & Co 540 mini',
+            'description' => ' a wood fragrant perfume',
+            'price' => 45000,
+            'image_url' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//101/MTA-93781702/saff_-_co-_saff_-_co-_mini_size_-_540_full01_dg8lqr2b.jpg'
         ]);
+
         product::create([
-            'product_name' => 'sangobox',
-            'description' => ' sango box manis gurih',
-            'price' => 13000,
-            'image_url' => 'https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/a7a82323-a209-44ec-bd31-57d142a4ae30_menu-item-image_1724655446226.jpg'
+            'product_name' => 'Saff & Co Cascavel mini',
+            'description' => 'a sweet and aromatic perfume',
+            'price' => 45000,
+            'image_url' => 'https://image.astronauts.cloud/product-images/2024/2/SAFFCo_6063513f-718b-4887-a06c-f33cd0a1b2d5_900x900.jpg'
         ]);
 
         //product_category seeder create relation product_category
@@ -188,32 +189,32 @@ class DatabaseSeeder extends Seeder
         coment::create([
             'product_id' => 3,
             'user_id' => 2,
-            'coment_text' => 'waduh enak bangett tela tela nya'
+            'coment_text' => 'yang solaris favorite aku nih'
         ]);
         coment::create([
             'product_id' => 1,
             'user_id' => 2,
-            'coment_text' => 'kopi nee swegerrrr cik'
+            'coment_text' => 'kaya nya yg sotb nih yang paling laris'
         ]);
         coment::create([
             'product_id' => 2,
             'user_id' => 4,
-            'coment_text' => 'kopi nya enaken buat temen ngoding'
+            'coment_text' => 'love love bgt sama yg ini'
         ]);
         coment::create([
             'product_id' => 4,
             'user_id' => 3,
-            'coment_text' => 'stuff nya creamy banget '
+            'coment_text' => 'gila aku pake tiap hari njir saking enak nya'
         ]);
         coment::create([
             'product_id' => 5,
             'user_id' => 2,
-            'coment_text' => 'mie nya gurih banget cuyyyy'
+            'coment_text' => 'wanginya kaya gulali'
         ]);
         coment::create([
             'product_id' => 1,
             'user_id' => 3,
-            'coment_text' => 'kopi aren nya gurih banget cuyyyy'
+            'coment_text' => 'premium best lah'
         ]);
 
         product_user::create([

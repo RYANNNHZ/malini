@@ -3,27 +3,19 @@
 @section('konten')
     <div class="container">
         <div class="row">
-
-            <video autoplay muted playsinline loop src="videoplayback.webm" class="w-100 my-3 rounded-5"></video>
-
-
-
-            <div class="row my-5">
-                <div class="col text-center">
-                    <h1 class="display-4 font-weight-bolder text-dark"><b>Malini Perfume <i class="bi bi-tree-fill"></i></b></h1>
-                    <p class="lead">Premium Perfume at Affordable </p>
-                </div>
+            <div class="col-12 my-3">
+                <h1 class="text-dark">category : {{ $category->category_name }} </h1>
             </div>
+        </div>
+        <div class="row">
+            @foreach ($products as $product)
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
 
-            <div class="row">
-                @foreach ($products as $product)
-                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-
-                        <div class="card text-dark card-has-bg click-col"
-                            style="background-image:url('{{ $product->image_url }}');https">
-                            <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"
-                                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
-                                <a href="">
+                    <div class="card text-dark card-has-bg click-col"
+                        style="background-image:url('{{ $product->image_url }}');https">
+                        <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street"
+                            alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?">
+                        <a href="">
                             <div class="card-img-overlay d-flex flex-column">
                                 <div class="card-body">
                                     <h4 class="card-title mt-0"><a class="text-dark text-decoration-none"
@@ -54,12 +46,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
                     </div>
-                @endforeach
-            </div>
 
+                </div>
+            @endforeach
         </div>
+
     </div>
 @endsection
