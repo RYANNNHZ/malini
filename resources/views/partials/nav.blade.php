@@ -3,7 +3,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                    <h5 class="brand-name"><a class="text-decoration-none text-light" href="/product">Malini.</a> <i class="bi bi-tree-fill"></i></h5>
+                    <h5 class="brand-name"><a class="text-decoration-none text-light" href="/product">Malini.</a> <i
+                            class="bi bi-tree-fill"></i></h5>
                 </div>
                 <div class="col-md-5 my-auto">
                     <form role="search">
@@ -24,16 +25,28 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-user"></i> Username
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                @if (Auth::check())
+                                    {{ Auth::user()->username ?? 'username' }}
+                                @else
+                                    username
+                                @endif
+
+
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/users"><i class="fa fa-user"></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="/users"><i class="fa fa-user"></i> Profile</a></li>
 
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
+                                        Cart</a></li>
+                                <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -46,17 +59,21 @@
             <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
                 Malini <i class="bi bi-tree-fill"></i>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {{ $header == 'products' ? 'bg-dark text-light' : ''  }}" href="/product">home</a>
+                        <a class="nav-link {{ $header == 'products' ? 'bg-dark text-light' : '' }}"
+                            href="/product">home</a>
                     </li>
                     <li class="nav-item">
-                       <a class="nav-link {{ $header == 'categories' ? 'bg-dark text-light' : ''  }}" href="/category">All Categories</a>
+                        <a class="nav-link {{ $header == 'categories' ? 'bg-dark text-light' : '' }}"
+                            href="/category">All Categories</a>
                     </li>
                 </ul>
             </div>

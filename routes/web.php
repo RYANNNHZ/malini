@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ComentController;
 use App\Http\Controllers\CommentController;
@@ -23,12 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login',function(){
-    return view('content.login')->with(['header' => 'login']);
-});
-Route::get('/register',function(){
-    return view('content.register')->with(['header' => 'register']);
-});
+Route::get('/halamanlogin',[AuthController::class,'halLogin']);
+Route::get('/halamanregister',[AuthController::class,'halRegister']);
+Route::post('/login',[AuthController::class,'login']);
+Route::get('/logout',[AuthController::class,'logout']);
 
 Route::resource('product',ProductController::class);
 Route::resource('rating',RatingController::class);

@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <p class="text-dark me-4"> have an account <a class="text-decoration-none" href="/login">Login</a> </p>
+                        <p class="text-dark me-4"> have an account <a class="text-decoration-none" href="/halamanlogin">Login</a> </p>
                         <button type="button" data-mdb-button-init data-mdb-ripple-init
                             class="btn btn-dark btn-lg">Register</button>
                     </div>
