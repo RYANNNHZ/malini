@@ -23,6 +23,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login',function(){
+    return view('content.login')->with(['header' => 'login']);
+});
+Route::get('/register',function(){
+    return view('content.register')->with(['header' => 'register']);
+});
+
 Route::resource('product',ProductController::class);
 Route::resource('rating',RatingController::class);
 Route::resource('category',CategoryController::class);
