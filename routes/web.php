@@ -27,6 +27,7 @@ Route::get('/', function () {
 Route::get('/halamanlogin',[AuthController::class,'halLogin']);
 Route::get('/halamanregister',[AuthController::class,'halRegister']);
 Route::post('/login',[AuthController::class,'login']);
+Route::post('/register',[AuthController::class,'register']);
 Route::get('/logout',[AuthController::class,'logout']);
 
 Route::resource('product',ProductController::class);

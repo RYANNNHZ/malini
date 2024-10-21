@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\coment;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -27,7 +29,16 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $request->dd();
+        coment::create([
+            'coment_text' => $request->input('coment'),
+            'product_id' => $request->input('idproduct'),
+            'user_id' => Auth::user()->id
+        ]);
+
+        $id = $request->input('idproduct');
+
+        return redirect("/product/$id");
     }
 
     /**

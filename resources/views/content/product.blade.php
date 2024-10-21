@@ -68,10 +68,15 @@
                     <div class="card shadow-0 border rounded-4">
                         <div class="card-body p-4">
                             <div data-mdb-input-init class="form-outline mb-4">
-                                {{-- <input type="text" id="addANote" class="form-control" placeholder="Type comment..." /> --}}
-                                <textarea name="" class="form-control" placeholder="type comment..." id="" cols="10"
+                                <form action="/comment" method="POST">
+                                    @csrf
+                                    @method('POST')
+                                    <input type="hidden" value="{{$product->id}}" name="idproduct">
+                                    {{-- <input type="text" id="addANote" class="form-control" placeholder="Type comment..." /> --}}
+                                    <textarea name="coment" class="form-control" placeholder="type comment..." id="" cols="10"
                                     rows="3"></textarea>
-                                <a href="" class="btn btn-dark my-3">add comment</a>
+                                    <button type="submit"  class="btn btn-dark my-3">add comment</button>
+                                </form>
                             </div>
 
                             @foreach ($product->coments as $comment)
