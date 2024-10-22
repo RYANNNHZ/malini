@@ -7,6 +7,9 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\UsersController;
+use App\Http\Middleware\isAdmin;
+use App\Http\Middleware\isLogin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +27,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin',[AuthController::class,'admin'])->middleware('isAdmin');
 Route::get('/halamanlogin',[AuthController::class,'halLogin']);
 Route::get('/halamanregister',[AuthController::class,'halRegister']);
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
-Route::get('/logout',[AuthController::class,'logout']);
+Route::get('/logout',[AuthController::class,'logout'])->middleware(isLogin::class);
 
 Route::resource('product',ProductController::class);
 Route::resource('rating',RatingController::class);

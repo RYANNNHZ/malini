@@ -58,8 +58,8 @@ class AuthController extends Controller
 
         User::create([
             'username' => $request->input('username'),
-            'role' => 'user',
             'email' => $request->input('email'),
+            'role' => 'user',
             'password' => Hash::make($request->input('password'))
             // 'password' => Hash::make($request->input('password'))
         ]);
@@ -74,5 +74,9 @@ class AuthController extends Controller
     public function logout(){
         Auth::logout();
         return redirect('/halamanlogin');
+    }
+
+    public function admin(){
+        return view('content.admin')->with(['header' => 'admin']);
     }
 }

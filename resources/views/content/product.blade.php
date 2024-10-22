@@ -7,11 +7,12 @@
                 <a style="" class="btn btn-light text-dark rounded-5" href="/product"><i class="bi bi-arrow-left"></i></a>
             </div>
             <div class="col-4 text-center wrapper-title">
-                <h5 class="">Rafee.<i class="bi bi-cup-fill"></i></h5>
+                <h5 class="">malini.<i class="bi bi-tree-fill"></i></h5>
             </div>
             <div class="col-4 text-end wrapper-bookmark">
                 @foreach ($product->categories as $category)
-                    <a class="btn btn-light text-dark rounded-5 fw-bold" href="/category/{{ $category->id }}">{{ $category->category_name }}</a>
+                    <a class="btn btn-light text-dark rounded-5 fw-bold"
+                        href="/category/{{ $category->id }}">{{ $category->category_name }}</a>
                 @endforeach
             </div>
         </div>
@@ -67,19 +68,24 @@
                 <div class="col-12 col-md-12 col-lg-12 my-2">
                     <div class="card shadow-0 border rounded-4">
                         <div class="card-body p-4">
+                            @if (Auth::user())
+
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <form action="/comment" method="POST">
                                     @csrf
                                     @method('POST')
-                                    <input type="hidden" value="{{$product->id}}" name="idproduct">
+                                    <input type="hidden" value="{{ $product->id }}" name="idproduct">
                                     {{-- <input type="text" id="addANote" class="form-control" placeholder="Type comment..." /> --}}
                                     <textarea name="coment" class="form-control" placeholder="type comment..." id="" cols="10"
                                     rows="3"></textarea>
-                                    <button type="submit"  class="btn btn-dark my-3">add comment</button>
+                                    <button type="submit" class="btn btn-dark my-3">add comment</button>
                                 </form>
                             </div>
+                            @else
 
-                            @foreach ($product->coments as $comment)
+                            @endif
+
+                            @foreach ($product->comments as $comment)
                                 <div class="card mb-4 rounded-4">
                                     <div class="card-body rounded-4" style="background-color: #f0f2f5;">
                                         <p>{{ $comment->coment_text }}</p>
@@ -93,7 +99,8 @@
                                                 <i class="far fa-thumbs-up mx-2 fa-xs text-body"
                                                     style="margin-top: -0.16rem;"></i>
                                                 <p class="small text-muted mb-0">
-                                                    {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}</p>
+                                                    {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>

@@ -11,7 +11,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('content.profile');
+        return view('content.profile')->with(['header' => 'profile']);
     }
 
     /**

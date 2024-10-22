@@ -45,8 +45,13 @@
                                 </li>
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
                                         Cart</a></li>
-                                <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
-                                </li>
+                                    @if (Auth::check())
+                                    <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
+                                    @else
+                                    <li><a class="dropdown-item" href="/halamanlogin"><i class="fa fa-sign-out"></i> login</a>
+                                    <li><a class="dropdown-item" href="/halamanregister"><i class="fa fa-sign-out"></i> register</a>
+                                        @endif
+                                    </li>
                             </ul>
                         </li>
                     </ul>
