@@ -77,6 +77,7 @@ class AuthController extends Controller
     }
 
     public function admin(){
-        return view('content.admin')->with(['header' => 'admin']);
+        $users = User::paginate(10);
+        return view('content.admin')->with(['header' => 'admin','users' => $users]);
     }
 }
