@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\category;
+use App\Models\coment;
+use App\Models\product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -76,8 +79,5 @@ class AuthController extends Controller
         return redirect('/halamanlogin');
     }
 
-    public function admin(){
-        $users = User::paginate(10);
-        return view('content.admin')->with(['header' => 'admin','users' => $users]);
-    }
+
 }

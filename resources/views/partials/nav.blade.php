@@ -43,17 +43,24 @@
                                 </li>
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
-                                        Cart</a></li>
-                                    @if (Auth::check())
-                                    <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
+                                                                <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
+                                                                        Cart</a></li>
+                                @if (Auth::user()->role == 'admin')
+                                <li><a class="dropdown-item" href="/admin"><i class="fa fa-person"></i>admin</a>
+                                </li>
+                                @endif
+                                @if (Auth::check())
+                                    <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i>
+                                            Logout</a>
                                     @else
-                                    <li><a class="dropdown-item" href="/halamanlogin"><i class="fa fa-sign-out"></i> login</a>
-                                    <li><a class="dropdown-item" href="/halamanregister"><i class="fa fa-sign-out"></i> register</a>
-                                        @endif
-                                    </li>
-                            </ul>
+                                    <li><a class="dropdown-item" href="/halamanlogin"><i class="fa fa-sign-out"></i>
+                                            login</a>
+                                    <li><a class="dropdown-item" href="/halamanregister"><i class="fa fa-sign-out"></i>
+                                            register</a>
+                                @endif
                         </li>
+                    </ul>
+                    </li>
                     </ul>
                 </div>
             </div>
