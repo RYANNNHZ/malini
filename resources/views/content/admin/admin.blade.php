@@ -129,7 +129,7 @@
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                            <a class="btn btn-warning mb-4 text-white"> add product</a>
+                            <a href="/product/create" class="btn btn-warning mb-4 text-white"> add product</a>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-success text-white mb-2">

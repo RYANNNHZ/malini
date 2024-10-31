@@ -20,7 +20,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.admin.addProduct')->with(['header' => 'addProduct']);
     }
 
     /**
