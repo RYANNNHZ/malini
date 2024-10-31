@@ -45,9 +45,13 @@
                                 </li>
                                                                 <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
                                                                         Cart</a></li>
-                                @if (Auth::user()->role == 'admin')
+                                @if (!Auth::check())
+                                
+                                @elseif (Auth::user()->role == 'admin')
                                 <li><a class="dropdown-item" href="/admin"><i class="fa fa-person"></i>admin</a>
                                 </li>
+                                @else
+
                                 @endif
                                 @if (Auth::check())
                                     <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i>
