@@ -86,12 +86,13 @@
                             @endif
 
                             @foreach ($product->comments as $comment)
-                                <div class="card mb-4 rounded-4">
+                            <x-comments :comment="$comment"></x-comments>
+                                {{-- <div class="card mb-4 rounded-4">
                                     <div class="card-body rounded-4" style="background-color: #f0f2f5;">
                                         <p>{{ $comment->coment_text }}</p>
                                         <div class="d-flex justify-content-between">
                                             <div class="d-flex flex-row align-items-center">
-                                                <img src="https://avatar.iran.liara.run/public" alt="avatar"
+                                                <img src="https://avatar.iran.liara.run/username?username={{ $comment->user->username }}" alt="avatar"
                                                     width="25" height="25" />
                                                 <p class="small mb-0 ms-2">{{ $comment->user->username }}</p>
                                             </div>
@@ -104,7 +105,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             @endforeach
 
                         </div>

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    @include('partials.nav')
+    <x-navbar :header="$header"></x-navbar>
     @yield('konten')
     <script src="{{ url('js') . '/popper.min.js' }}"></script>
     <script src="{{ url('js') . '/bootstrap.js' }}"></script>
