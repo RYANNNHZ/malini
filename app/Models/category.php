@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class category extends Model
 {
-    use HasFactory;
+    use HasFactory,HasUuids;
 
     protected $guarded = ['id','created_at','updated_at'];
 
@@ -15,6 +16,6 @@ class category extends Model
         return $this->belongsToMany(product::class,'product_categories');
     }
 
-    
+
 
 }
