@@ -4,17 +4,9 @@
 
 <div class="container-fluid">
     <div class="container">
-        <div class="row d-flex my-3">
-            <div class="col-4 text-start wrapper-backhome">
-                <a style="" class="btn btn-light text-dark rounded-5" href="/product"><i class="bi bi-arrow-left"></i></a>
-            </div>
-            <div class="col-4 text-center wrapper-title">
-                <h5 class="">malini.<i class="bi bi-tree-fill"></i></h5>
-            </div>
-            <div class="col-4 text-end wrapper-bookmark">
+        
+        <x-navigation-header :product="null" ></x-navigation-header>
 
-            </div>
-        </div>
         <div class="row">
             <div class=" offset-3 col-6">
                 <div class="card text-start p-5 d-inline-block">

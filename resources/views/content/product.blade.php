@@ -2,20 +2,7 @@
 
 @section('konten')
     <div class="container-fluid container-md">
-        <div class="row d-flex my-3">
-            <div class="col-4 text-start wrapper-backhome">
-                <a style="" class="btn btn-light text-dark rounded-5" href="/product"><i class="bi bi-arrow-left"></i></a>
-            </div>
-            <div class="col-4 text-center wrapper-title">
-                <h5 class="">malini.<i class="bi bi-tree-fill"></i></h5>
-            </div>
-            <div class="col-4 text-end wrapper-bookmark">
-                @foreach ($product->categories as $category)
-                    <a class="btn btn-light text-dark rounded-5 fw-bold"
-                        href="/category/{{ $category->id }}">{{ $category->category_name }}</a>
-                @endforeach
-            </div>
-        </div>
+        <x-navigation-header :product="$product"></x-navigation-header>
         <div class="row">
 
             <div class="col-12 col-md-12 col-lg-6 d-none d-md-block">
