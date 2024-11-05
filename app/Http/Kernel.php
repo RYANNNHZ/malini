@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'isLogin' => \App\Http\Middleware\isLogin::class,
         'is_baned' => \App\Http\Middleware\is_baned::class,
         'is_not_baned' => \App\Http\Middleware\is_not_baned::class,
+        'isLoged' => \App\Http\Middleware\isLoged::class,
     ];
 }

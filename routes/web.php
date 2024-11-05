@@ -30,8 +30,8 @@ Route::get('/', function () {
 });
 
 Route::get('/admin',[AdminController::class,'admin'])->middleware('isAdmin');
-Route::get('/halamanlogin',[AuthController::class,'halLogin']);
-Route::get('/halamanregister',[AuthController::class,'halRegister']);
+Route::get('/halamanlogin',[AuthController::class,'halLogin'])->middleware('isLoged');
+Route::get('/halamanregister',[AuthController::class,'halRegister'])->middleware('isLoged');
 Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
 Route::get('/logout',[AuthController::class,'logout'])->middleware(isLogin::class);
