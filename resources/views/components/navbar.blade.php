@@ -37,8 +37,11 @@
 
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if(Auth::check())
                                 <li><a class="dropdown-item" href="/users"><i class="fa fa-user"></i> Profile</a></li>
+                                @else
 
+                                @endif
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a>
@@ -46,7 +49,7 @@
                                                                 <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
                                                                         Cart</a></li>
                                 @if (!Auth::check())
-                                
+
                                 @elseif (Auth::user()->role == 'admin')
                                 <li><a class="dropdown-item" href="/admin"><i class="fa fa-person"></i>admin</a>
                                 </li>

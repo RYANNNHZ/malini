@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('coments', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('product_id')
+            $table->uuid('id')->primary();
+            $table->foreignUuid('product_id')
             ->constrained()
             ->onDelete('cascade')
             ->onUpdate('cascade');
-            $table->foreignId('user_id')
+            $table->foreignUuid('user_id')
             ->constrained()
             ->onDelete('cascade')
             ->onUpdate('cascade');

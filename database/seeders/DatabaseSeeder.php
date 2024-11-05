@@ -109,125 +109,231 @@ class DatabaseSeeder extends Seeder
             'image_url' => 'https://image.astronauts.cloud/product-images/2024/2/SAFFCo_6063513f-718b-4887-a06c-f33cd0a1b2d5_900x900.jpg'
         ]);
 
-        //product_category seeder create relation product_category
-        product_category::create([
-            'product_id' => 1,
-            'category_id' => 4,
-        ]);
-        product_category::create([
-            'product_id' => 2,
-            'category_id' => 4,
-        ]);
-        product_category::create([
-            'product_id' => 3,
-            'category_id' => 1,
-        ]);
-        product_category::create([
-            'product_id' => 4,
-            'category_id' => 3,
-        ]);
-        product_category::create([
-            'product_id' => 5,
-            'category_id' => 2,
-        ]);
+        // Seed data product_category
+$product = product::first(); // Ambil produk pertama
+$category = category::first(); // Ambil kategori pertama
+
+if ($product && $category) {
+    product_category::create([
+        'product_id' => $product->id,
+        'category_id' => $category->id,
+    ]);
+}
+
+$product = product::skip(1)->first();
+$category = category::skip(1)->first();
+
+if ($product && $category) {
+    product_category::create([
+        'product_id' => $product->id,
+        'category_id' => $category->id,
+    ]);
+}
+
+$product = product::skip(2)->first();
+$category = category::skip(2)->first();
+
+if ($product && $category) {
+    product_category::create([
+        'product_id' => $product->id,
+        'category_id' => $category->id,
+    ]);
+}
+$product = product::skip(3)->first();
+$category = category::skip(3)->first();
+
+if ($product && $category) {
+    product_category::create([
+        'product_id' => $product->id,
+        'category_id' => $category->id,
+    ]);
+}
+$product = product::skip(4)->first();
+$category = category::skip(1)->first();
+
+if ($product && $category) {
+    product_category::create([
+        'product_id' => $product->id,
+        'category_id' => $category->id,
+    ]);
+}
 
         //rating seeder create rating
+$product = product::skip(0)->first();
+$user = user::skip(0)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 5
+    ]);
+}
 
-        rating::create([
-            'product_id' => 1,
-            'user_id' => 2,
-            'rating_value' => 5
-        ]);
-        rating::create([
-            'product_id' => 1,
-            'user_id' => 3,
-            'rating_value' => 5
-        ]);
-        rating::create([
-            'product_id' => 2,
-            'user_id' => 4,
-            'rating_value' => 5
-        ]);
-        rating::create([
-            'product_id' => 2,
-            'user_id' => 2,
-            'rating_value' => 3
-        ]);
-        rating::create([
-            'product_id' => 3,
-            'user_id' => 3,
-            'rating_value' => 5
-        ]);
-        rating::create([
-            'product_id' => 3,
-            'user_id' => 4,
-            'rating_value' => 3
-        ]);
-        rating::create([
-            'product_id' => 4,
-            'user_id' => 2,
-            'rating_value' => 5
-        ]);
-        rating::create([
-            'product_id' => 4,
-            'user_id' => 3,
-            'rating_value' => 4
-        ]);
-        rating::create([
-            'product_id' => 5,
-            'user_id' => 4,
-            'rating_value' => 4
-        ]);
-        rating::create([
-            'product_id' => 5,
-            'user_id' => 2,
-            'rating_value' => 2
-        ]);
+$product = product::skip(0)->first();
+$user = user::skip(2)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 5
+    ]);
+}
+
+$product = product::skip(1)->first();
+$user = user::skip(3)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 5
+    ]);
+}
+
+$product = product::skip(1)->first();
+$user = user::skip(1)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 3
+    ]);
+}
+
+$product = product::skip(2)->first();
+$user = user::skip(2)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 5
+    ]);
+}
+
+$product = product::skip(2)->first();
+$user = user::skip(3)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 3
+    ]);
+}
+
+$product = product::skip(3)->first();
+$user = user::skip(1)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 5
+    ]);
+}
+$product = product::skip(3)->first();
+$user = user::skip(2)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 4
+    ]);
+}
+
+$product = product::skip(4)->first();
+$user = user::skip(3)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 4
+    ]);
+}
+
+$product = product::skip(4)->first();
+$user = user::skip(1)->first();
+if($product && $user){
+    rating::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'rating_value' => 2
+    ]);
+}
+
+
 
 
         //coment seeder create dummy comment
-        coment::create([
-            'product_id' => 3,
-            'user_id' => 2,
-            'coment_text' => 'yang solaris favorite aku nih'
-        ]);
-        coment::create([
-            'product_id' => 1,
-            'user_id' => 2,
-            'coment_text' => 'kaya nya yg sotb nih yang paling laris'
-        ]);
-        coment::create([
-            'product_id' => 2,
-            'user_id' => 4,
-            'coment_text' => 'love love bgt sama yg ini'
-        ]);
-        coment::create([
-            'product_id' => 4,
-            'user_id' => 3,
-            'coment_text' => 'gila aku pake tiap hari njir saking enak nya'
-        ]);
-        coment::create([
-            'product_id' => 5,
-            'user_id' => 2,
-            'coment_text' => 'wanginya kaya gulali'
-        ]);
-        coment::create([
-            'product_id' => 1,
-            'user_id' => 3,
-            'coment_text' => 'premium best lah'
-        ]);
 
-        product_user::create([
-            'product_id' => 1,
-            'user_id' => 2,
-            'is_checkout' => true
-        ]);
+$product = product::skip(2)->first();
+$user = user::skip(1)->first();
+if($product && $user){
+    coment::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'coment_text' => 'yang solaris favorite aku nih'
+    ]);
+}
 
-        product_user::create([
-            'product_id' => 2,
-            'user_id' => 3,
-            'is_checkout' => true
-        ]);
+
+$product = product::skip(0)->first();
+$user = user::skip(1)->first();
+if($product && $user){
+    coment::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'coment_text' => 'kaya nya yg sotb nih yang paling laris'
+    ]);
+}
+
+$product = product::skip(1)->first();
+$user = user::skip(3)->first();
+if($product && $user){
+    coment::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'coment_text' => 'love love bgt sama yg ini'
+    ]);
+}
+
+$product = product::skip(3)->first();
+$user = user::skip(2)->first();
+if($product && $user){
+    coment::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'coment_text' => 'gila aku pake tiap hari njir saking enak nya'
+    ]);
+}
+
+$product = product::skip(4)->first();
+$user = user::skip(1)->first();
+if($product && $user){
+    coment::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'coment_text' => 'wanginya kaya gulali'
+    ]);
+}
+
+$product = product::skip(0)->first();
+$user = user::skip(2)->first();
+if($product && $user){
+    coment::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'coment_text' => 'premium best lah'
+    ]);
+}
+$product = product::skip(0)->first();
+$user = user::skip(1)->first();
+if($product && $user){
+    coment::create([
+        'product_id' => $product->id,
+        'user_id' => $user->id,
+        'coment_text' => 'premium best lah'
+    ]);
+}
+
+
 
     }
 }
