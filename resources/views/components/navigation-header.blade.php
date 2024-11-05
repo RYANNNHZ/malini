@@ -1,6 +1,6 @@
 
     <div class="col-4 text-start wrapper-backhome">
-        <a style="" class="btn btn-light text-dark rounded-5" href="/product"><i class="bi bi-arrow-left"></i></a>
+        <a style="" class="btn btn-light text-dark rounded-5" href="/{{ $navigate }}"><i class="bi bi-arrow-left"></i></a>
     </div>
     <div class="col-4 text-center wrapper-title">
         <h5 class="">malini.<i class="bi bi-tree-fill"></i></h5>

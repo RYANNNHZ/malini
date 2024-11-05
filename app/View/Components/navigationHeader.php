@@ -12,9 +12,11 @@ class navigationHeader extends Component
      * Create a new component instance.
      */
     public $product;
-    public function __construct($product)
+    public $navigate;
+    public function __construct($product,$navigate)
     {
         $this->product = $product;
+        $this->navigate = $navigate;
     }
 
     /**

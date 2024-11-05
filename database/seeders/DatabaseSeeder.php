@@ -78,35 +78,35 @@ class DatabaseSeeder extends Seeder
         //product seeder create product
 
         product::create([
-            'product_name' => 'Saff & Co s.o.t.b mini',
-            'description' => 'a flower fragrant',
+            'product_name' => 'Saff & Co sotb',
+            'description' => 'wowowowowowowow',
             'price' => 45000,
-            'image_url' => 'https://api.watsons.co.id/medias/prd-front-35863.jpg?context=bWFzdGVyfGltYWdlc3wzNjkyMXxpbWFnZS9qcGVnfGFEaG1MMmhoTnk4eE1qUTBPRGd4T0RjeU5EZzVOQzlYVkVOSlJDMHpOVGcyTXkxbWNtOXVkQzVxY0djfDA1MDA4YTUxNWY0NzQzOThhNzgwNTc4NGJjNGM5ZDkyZDM2MGRiOWFkNDMwY2Y3NWJiZDJiMDA4YWI5MDQ4Mzc'
+            'image_url' => "sotb.webp"
         ]);
         product::create([
             'product_name' => 'Saff & Co chno mini',
             'description' => 'a flora things here',
             'price' => 45000,
-            'image_url' => "https://www.beautyhaul.com/assets/uploads/products/thumbs/800x800/CHNO__1_-removebg-preview.png"
+            'image_url' => "chino.png"
         ]);
         product::create([
             'product_name' => 'Saff & Co solaris mini',
             'description' => 'fresh things come on',
             'price' => 45000,
-            'image_url' => 'https://hglhouse.com/cdn/shop/files/id-11134207-7qul2-lgorwps1p3u39a.jpg?v=1715238026&width=2048'
+            'image_url' => 'solaris.webp'
         ]);
         product::create([
             'product_name' => 'Saff & Co 540 mini',
             'description' => ' a wood fragrant perfume',
             'price' => 45000,
-            'image_url' => 'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//101/MTA-93781702/saff_-_co-_saff_-_co-_mini_size_-_540_full01_dg8lqr2b.jpg'
+            'image_url' => '540.webp'
         ]);
 
         product::create([
             'product_name' => 'Saff & Co Cascavel mini',
             'description' => 'a sweet and aromatic perfume',
             'price' => 45000,
-            'image_url' => 'https://image.astronauts.cloud/product-images/2024/2/SAFFCo_6063513f-718b-4887-a06c-f33cd0a1b2d5_900x900.jpg'
+            'image_url' => 'cascavel.jpg'
         ]);
 
         // Seed data product_category
