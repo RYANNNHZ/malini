@@ -2,13 +2,15 @@
 
 @section('konten')
     <div class="container-fluid container-md">
-        <x-navigation-header :product="$product"></x-navigation-header>
+
+        <div class="row d-flex my-3">
+            <x-navigation-header :product="$product"></x-navigation-header>
+        </div>
+
         <div class="row">
 
             <div class="col-12 col-md-12 col-lg-6 d-none d-md-block">
-                <div class="card text-start rounded-4 p-3">
-                    <img class="card-img-top" src="{{ $product->image_url }}" alt="Title" />
-                </div>
+                <x-image-product :image="$product->image_url"></x-image-product>
             </div>
 
             <div class="col-12 col-md-12 col-lg-6 my-2">
@@ -19,18 +21,7 @@
                     <div class="card shadow-0 border rounded-4">
                         <div class="card-body p-4">
                             @if (Auth::user())
-
-                            <div data-mdb-input-init class="form-outline mb-4">
-                                <form action="/comment" method="POST">
-                                    @csrf
-                                    @method('POST')
-                                    <input type="hidden" value="{{ $product->id }}" name="idproduct">
-                                    {{-- <input type="text" id="addANote" class="form-control" placeholder="Type comment..." /> --}}
-                                    <textarea name="coment" class="form-control" placeholder="type comment..." id="" cols="10"
-                                    rows="3"></textarea>
-                                    <button type="submit" class="btn btn-dark my-3">add comment</button>
-                                </form>
-                            </div>
+                            <x-comment-prompt :productId="$product->id"></x-comment-prompt>
                             @else
 
                             @endif

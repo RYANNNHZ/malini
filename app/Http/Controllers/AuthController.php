@@ -15,11 +15,11 @@ class AuthController extends Controller
 {
 
     public function halLogin(){
-        return view('content.login')->with(['header'=>'login']);
+        return view('content.Auth.login')->with(['header'=>'login']);
     }
 
     public function halRegister(){
-        return view('content.register')->with(['header'=>'register']);
+        return view('content.Auth.register')->with(['header'=>'register']);
 
     }
 

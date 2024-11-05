@@ -1,4 +1,4 @@
-<div class="row d-flex my-3">
+
     <div class="col-4 text-start wrapper-backhome">
         <a style="" class="btn btn-light text-dark rounded-5" href="/product"><i class="bi bi-arrow-left"></i></a>
     </div>
@@ -17,4 +17,3 @@
         @endif
 
     </div>
-</div>
