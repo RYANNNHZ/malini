@@ -108,85 +108,10 @@
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">{{ Auth::user()->username }}</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">{{ Auth::user()->role }}</li>
-                    </ol>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-2">
-                                <div class="card-body">Total Products <i class="bi bi-box2-fill"></i></div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/product/create">
-                                        <h1>{{ $datas['productsCount'] }}</h1>
-                                    </a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-2">
-                                <div class="card-body">Total categories <i class="bi bi-tags-fill"></i></div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/category/create">
-                                        <h1>{{ $datas['categoriesCount'] }}</h1>
-                                    </a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">Total users <i class="bi bi-person-fill"></i></div>
+                    <x-user-data :users="$users"></x-user-data>
 
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">
-                                        <h1>{{ $datas['usersCount'] }}</h1>
-                                    </a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">Total comments <i class="bi bi-chat-left-fill"></i></div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">
-                                        <h1>{{ $datas['commentsCount'] }}</h1>
-                                    </a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-area me-1"></i>
-                                    Area Chart Example
-                                </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Bar Chart Example
-                                </div>
-                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <x-category-data :categories="$categories"></x-category-data>
-
-                    <x-comment-data :comments="$comments"></x-comment-data>
                 </div>
 
             </main>

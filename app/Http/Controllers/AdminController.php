@@ -24,4 +24,19 @@ class AdminController extends Controller
         return view('content.admin.admin')->with(['header' => 'admin','datas' => $datas,'users' => $users,'products' => $products,'categories' => $categories,'comments' => $comments]);
     }
 
+    public function userData(){
+        $users = User::simplePaginate(4);
+        $datas = [
+            'usersCount' => User::count(),
+        ];
+        return view('content.admin.layouts.userDatas')->with(['header' => 'admin','datas' => $datas,'users' => $users]);
+    }
+    public function productData(){
+        $products = product::simplePaginate(4);
+        $datas = [
+            'productsCount' => product::count(),
+        ];
+        return view('content.admin.layouts.productDatas')->with(['header' => 'admin','datas' => $datas,'products' => $products]);
+    }
+
 }
