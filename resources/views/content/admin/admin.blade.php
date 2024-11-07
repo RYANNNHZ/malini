@@ -141,7 +141,7 @@
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                            <a class="btn btn-success mb-4 text-white"> add category</a>
+                            <a href="/category/create" class="btn btn-success mb-4 text-white"> add category</a>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">

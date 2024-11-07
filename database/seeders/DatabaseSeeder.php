@@ -60,19 +60,19 @@ class DatabaseSeeder extends Seeder
 
         category::create([
             'category_name' => 'fresh',
-            'image_url' => 'https://i.pinimg.com/564x/8e/cd/45/8ecd4551c8a6e776c639174f453d8234.jpg'
+            'image_url' => '/foto_categories/fresh.jpg'
         ]);
         category::create([
             'category_name' => 'sweet',
-            'image_url' => 'https://i.pinimg.com/564x/1c/a2/94/1ca2943ef4109589b426d6a213bcfaac.jpg'
+            'image_url' => '/foto_categories/sweet.jpg'
         ]);
         category::create([
             'category_name' => 'woody',
-            'image_url' => "https://i.pinimg.com/564x/66/3f/99/663f99a41af86d694a90c69818991047.jpg"
+            'image_url' => "/foto_categories/woody.jpg"
         ]);
         category::create([
             'category_name' => 'Floral',
-            'image_url' => "https://i.pinimg.com/enabled_hi/564x/16/65/8b/16658b2f6e3240b3fd9a20627621df5b.jpg"
+            'image_url' => "/foto_categories/flora.jpg"
         ]);
 
         //product seeder create product
@@ -81,32 +81,32 @@ class DatabaseSeeder extends Seeder
             'product_name' => 'Saff & Co sotb',
             'description' => 'wowowowowowowow',
             'price' => 45000,
-            'image_url' => "sotb.webp"
+            'image_url' => "/foto/sotb.webp"
         ]);
         product::create([
             'product_name' => 'Saff & Co chno mini',
             'description' => 'a flora things here',
             'price' => 45000,
-            'image_url' => "chino.png"
+            'image_url' => "/foto/chino.png"
         ]);
         product::create([
             'product_name' => 'Saff & Co solaris mini',
             'description' => 'fresh things come on',
             'price' => 45000,
-            'image_url' => 'solaris.webp'
+            'image_url' => '/foto/solaris.webp'
         ]);
         product::create([
             'product_name' => 'Saff & Co 540 mini',
             'description' => ' a wood fragrant perfume',
             'price' => 45000,
-            'image_url' => '540.webp'
+            'image_url' => '/foto/540.webp'
         ]);
 
         product::create([
             'product_name' => 'Saff & Co Cascavel mini',
             'description' => 'a sweet and aromatic perfume',
             'price' => 45000,
-            'image_url' => 'cascavel.jpg'
+            'image_url' => '/foto/cascavel.jpg'
         ]);
 
         // Seed data product_category

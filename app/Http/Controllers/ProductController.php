@@ -54,8 +54,8 @@ class ProductController extends Controller
 
         $foto_file = $request->file('image_url');
         $foto_ekstensi = $foto_file->extension();
-        $foto_nama = date('ymdhis').'.'.$foto_ekstensi;
-        $foto_file->move(public_path('/'),$foto_nama);
+        $foto_nama = "/foto/".date('ymdhis').'.'.$foto_ekstensi;
+        $foto_file->move(public_path('/foto'),$foto_nama);
 
         $data = [
             'product_name' => $request->input('product_name'),
