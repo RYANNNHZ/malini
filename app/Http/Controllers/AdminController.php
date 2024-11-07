@@ -45,5 +45,12 @@ class AdminController extends Controller
         ];
         return view('content.admin.layouts.categoryDatas')->with(['header' => 'admin','datas' => $datas,'categories' => $categories,]);
     }
+    public function commentData(){
+        $comments = coment::simplePaginate(4);
+        $datas = [
+            'commentsCount' => coment::count()
+        ];
+        return view('content.admin.layouts.commentDatas')->with(['header' => 'admin','datas' => $datas,'comments' => $comments]);;
+    }
 
 }

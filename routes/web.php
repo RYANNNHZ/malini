@@ -33,6 +33,7 @@ Route::get('/admin',[AdminController::class,'admin'])->middleware('isAdmin');
 Route::get('/userdata',[AdminController::class,'userData'])->middleware('isAdmin');
 Route::get('/productdata',[AdminController::class,'productData'])->middleware('isAdmin');
 Route::get('/categorydata',[AdminController::class,'categoryData'])->middleware('isAdmin');
+Route::get('/commentdata',[AdminController::class,'commentData'])->middleware('isAdmin');
 Route::get('/halamanlogin',[AuthController::class,'halLogin'])->middleware('isLoged');
 Route::get('/halamanregister',[AuthController::class,'halRegister'])->middleware('isLoged');
 Route::post('/login',[AuthController::class,'login']);
