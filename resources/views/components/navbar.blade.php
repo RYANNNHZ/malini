@@ -23,7 +23,7 @@
 
                         <li class="nav-item">
                             @if (Auth::check())
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/cart">
                                 <i class="bi bi-cart-fill"></i> Cart (0)
                             </a>
                             @endif
