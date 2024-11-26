@@ -109,4 +109,11 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function searching(Request $request){
+        $productName = $request->product;
+        $products = product::where('product_name','like',"%$productName%")->get();
+        return view('content.searchProduct')->with(['header'=> 'products','products' => $products]);
+
+    }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ComentController;
 use App\Http\Controllers\CommentController;
@@ -40,10 +41,12 @@ Route::post('/login',[AuthController::class,'login']);
 Route::post('/register',[AuthController::class,'register']);
 Route::get('/logout',[AuthController::class,'logout'])->middleware(isLogin::class);
 Route::get('/baned',[ErrorController::class,'baned'])->middleware('is_not_baned');
+Route::post('/search',[ProductController::class,'searching']);
 
 Route::resource('product',ProductController::class)->middleware('is_baned');
 Route::resource('rating',RatingController::class)->middleware('is_baned');
 Route::resource('category',CategoryController::class)->middleware('is_baned');
 Route::resource('comment',CommentController::class)->middleware('is_baned');
 Route::resource('users',UsersController::class)->middleware('is_baned');
+Route::resource('cart',CartController::class)->middleware('isLogin');
 

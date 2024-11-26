@@ -16,13 +16,15 @@ class cardProduct extends Component
     public $description;
     public $rating;
     public $price;
-    public function __construct($image,$title,$description,$rating,$price)
+    public $id;
+    public function __construct($image,$title,$description,$rating,$price,$id)
     {
         $this->image = $image;
         $this->title = $title;
         $this->description = $description;
         $this->rating = $rating;
         $this->price = $price;
+        $this->id = $id;
     }
 
     /**

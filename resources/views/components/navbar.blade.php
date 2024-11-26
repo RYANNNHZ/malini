@@ -7,11 +7,13 @@
                             class="bi bi-tree-fill"></i></h5>
                 </div>
                 <div class="col-md-5 my-auto">
-                    <form role="search">
+                    <form role="search" method="POST" action="/search">
+                        @method('post')
+                        @csrf
                         <div class="input-group">
-                            <input type="search" placeholder="Search your product" class="form-control" />
+                            <input type="search" name="product" placeholder="Search your product" class="form-control" />
                             <button class="btn bg-white" type="submit">
-                                <i class="fa fa-search"></i>
+                                <i class="bi bi-search"></i>
                             </button>
                         </div>
                     </form>
@@ -20,9 +22,11 @@
                     <ul class="nav justify-content-end">
 
                         <li class="nav-item">
+                            @if (Auth::check())
                             <a class="nav-link" href="#">
                                 <i class="bi bi-cart-fill"></i> Cart (0)
                             </a>
+                            @endif
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -39,15 +43,14 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @if(Auth::check())
                                 <li><a class="dropdown-item" href="/users"><i class="fa fa-user"></i> Profile</a></li>
-                                @else
-
-                                @endif
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a>
                                 </li>
-                                                                <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My
-                                                                        Cart</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+                                @else
+
+                                @endif
                                 @if (!Auth::check())
 
                                 @elseif (Auth::user()->role == 'admin')

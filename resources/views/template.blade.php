@@ -15,5 +15,6 @@
     @yield('konten')
     <script src="{{ url('js') . '/popper.min.js' }}"></script>
     <script src="{{ url('js') . '/bootstrap.js' }}"></script>
+    
 </body>
 </html>

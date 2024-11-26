@@ -14,7 +14,7 @@
             </div>
 
             <div class="col-12 col-md-12 col-lg-6 my-2">
-                <x-card-product :image="$product->image_url" :title="$product->product_name" :description="$product->description" :rating="$product->ratings" :price="$product->price"></x-card-product>
+                <x-card-product :id="$product->id" :image="$product->image_url" :title="$product->product_name" :description="$product->description" :rating="$product->ratings" :price="$product->price"></x-card-product>
 
 
                 <div class="col-12 col-md-12 col-lg-12 my-2">
