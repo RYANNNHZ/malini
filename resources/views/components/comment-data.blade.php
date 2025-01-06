@@ -23,7 +23,9 @@
                         <td scope='col' style="height: 70px">{{ $comment->created_at->format('d F Y') }}</td>
                         <td>
                             <a href="" class=" text-center btn btn-primary"><i
-                                class="bi bi-search"></i></a>
+                                class="bi bi-pen"></i></a>
+                            <a href="" class=" text-center btn btn-warning"><i
+                                class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach

@@ -6,14 +6,15 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class data-navigation extends Component
+class datanavigation extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $header;
+    public function __construct($header)
     {
-        //
+        $this->header = $header;
     }
 
     /**

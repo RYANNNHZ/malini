@@ -27,7 +27,9 @@
                         <!-- Placeholder jika tidak ada data -->
                         <td class="text-center">
                             <a href="" class=" text-center btn btn-primary"><i
-                                    class="bi bi-search"></i></a>
+                                class="bi bi-pen"></i></a>
+                            <a href="" class=" text-center btn btn-warning"><i
+                                class="bi bi-trash"></i></a>
                         </td> <!-- Placeholder jika tidak ada data -->
                     </tr>
                 @endforeach

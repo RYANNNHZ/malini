@@ -24,7 +24,14 @@
                         <li class="nav-item">
                             @if (Auth::check())
                             <a class="nav-link" href="/cart">
+<<<<<<< HEAD
                                 <i class="bi bi-cart-fill"></i> Cart (0)
+=======
+                                <i class="bi bi-cart-fill"></i> Cart ( {{ Auth::user()->products->count() }} )
+
+
+                                    {{-- {{ Auth::user()->products() }} --}}
+>>>>>>> 5cb521dcb71972147b85222a3f1627b5e9a6e58a
                             </a>
                             @endif
                         </li>

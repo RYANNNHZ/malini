@@ -24,8 +24,11 @@
                                                 <img style="width:100px" src="{{ $category->image_url }}" alt="">
                                             </td>
                                             <td>
+
                                                 <a href="" class=" text-center btn btn-primary"><i
-                                                    class="bi bi-search"></i></a>
+                                                    class="bi bi-pen"></i></a>
+                                                <a href="" class=" text-center btn btn-warning"><i
+                                                    class="bi bi-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
