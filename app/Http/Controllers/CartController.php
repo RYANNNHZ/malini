@@ -13,7 +13,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        return view('content.cart')->with(["header" => 'cart']);
     }
 
     /**
@@ -56,9 +56,29 @@ class CartController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $productId)
     {
-        //
+        $quantity = $request->input('quantity');
+        $user = Auth::user();
+        $user->products()->updateExistingPivot($productId, ['quantity' => $quantity]);
+        return back()->with('success', 'Quantity updated successfully.');
+    }
+
+    // Remove Product
+    public function remove($productId)
+    {
+        $user = Auth::user();
+        $user->products()->detach($productId);
+        return back()->with('success', 'Product removed from cart.');
+    }
+
+    // Checkout All
+    public function checkout()
+    {
+        $user = Auth::user();
+        // Simpan logika checkout sesuai kebutuhan
+        $user->products()->detach(); // Kosongkan cart setelah checkout
+        return back()->with('success', 'Checkout successful!');
     }
 
     /**

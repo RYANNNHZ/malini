@@ -38,7 +38,7 @@
             <button class="btn btn-dark w-100 my-1 my-md-0 rounded-5 ms-md-1" type="submit">add cart<i
                     class="mx-1 bi bi-cart-check-fill"></i></button>
                 </form>
-            @else
+            @elseif(!Auth::check())
             <a class="btn btn-dark w-100 my-1 my-md-0 rounded-5 disabled">checkout<i
                 class="mx-1 bi bi-basket-fill"></i></a>
         <a class="btn btn-dark w-100 my-1 my-md-0 rounded-5 ms-md-1 disabled">add cart<i
