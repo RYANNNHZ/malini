@@ -25,6 +25,6 @@ class product extends Model
     }
 
     public function users(){
-        return $this->belongsToMany(User::class,'product_User');
+        return $this->belongsToMany(User::class,'product_User')->withPivot('qty','id','product_id','user_id');
     }
 }

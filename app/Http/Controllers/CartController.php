@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\product;
 use App\Models\product_user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,13 +14,7 @@ class CartController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $user_id = Auth::User()->id;
-        $products = product_user::where('user_id','=',$user_id)->get();
-        return view('content.cartview')->with(['header'=>'cart','']);
-=======
-        return view('content.cart')->with(["header" => 'cart']);
->>>>>>> 5cb521dcb71972147b85222a3f1627b5e9a6e58a
+        return view('content.cart')->with(['header'=>'cart']);
     }
 
     /**
@@ -64,27 +59,26 @@ class CartController extends Controller
      */
     public function update(Request $request, $productId)
     {
-        $quantity = $request->input('quantity');
-        $user = Auth::user();
-        $user->products()->updateExistingPivot($productId, ['quantity' => $quantity]);
-        return back()->with('success', 'Quantity updated successfully.');
+        // $quantity = $request->input('quantity');
+        // $user = Auth::user();
+        // $user->products()->updateExistingPivot($productId, ['quantity' => $quantity]);
+        // return back()->with('success', 'Quantity updated successfully.');
     }
 
     // Remove Product
     public function remove($productId)
     {
-        $user = Auth::user();
-        $user->products()->detach($productId);
-        return back()->with('success', 'Product removed from cart.');
+        // $user = Auth::user();
+        // $user->products()->detach($productId);
+        // return back()->with('success', 'Product removed from cart.');
     }
 
     // Checkout All
     public function checkout()
     {
-        $user = Auth::user();
-        // Simpan logika checkout sesuai kebutuhan
-        $user->products()->detach(); // Kosongkan cart setelah checkout
-        return back()->with('success', 'Checkout successful!');
+        // $user = Auth::user();
+        // $user->products()->detach();
+        // return back()->with('success', 'Checkout successful!');
     }
 
     /**
@@ -92,6 +86,32 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+product_user::where('product_id', $id)
+             ->where('user_id', Auth::user()->id)
+             ->delete();
+
+        return redirect('/cart');
+
     }
+
+    public function addQty($id){
+        $data = product_user::find($id);
+        $qty = $data->qty;
+
+        $data->qty = $qty + 1;
+        $data->save();
+        return redirect('/cart');
+    }
+
+    public function minQty($id){
+        $data = product_user::find($id);
+        $qty = $data->qty;
+        if($qty > 1){
+            $data->qty = $qty - 1;
+            $data->save();
+        }
+        return redirect('/cart');
+    }
+
+
 }

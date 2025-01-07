@@ -21,22 +21,22 @@
                                     <h4 class="text-black">{{ $product->product_name }}</h4>
                                     <p>{{$product->description}}</p>
                                     <p class="card-text">Price: <strong>${{ number_format($product->price, 2) }}</strong></p>
-
-                                    {{-- <p class="card-text">
-                                        @if ($product->pivot->is_checkout)
-                                            <span class="badge bg-success">Checked Out</span>
-                                        @else
-                                            <span class="badge bg-warning">Not Checked Out</span>
-                                        @endif
-                                    </p> --}}
-                                    <!-- Tombol disabled -->
-                                    <div class="d-flex justify-content-between">
+                                    <div class="d-md-flex justify-content-between justif">
                                         <div class="input-group w-auto ">
-                                            <button class="btn btn-dark" onclick="changeQty(-1)">-</button>
-                                            <input type="number" id="qty" class="form-control text-center" value="{{ $product->qty ?? 1 }}" min="1">
-                                            <button class="btn btn-dark" onclick="changeQty(1)">+</button>
+                                            <a href="/minQty/{{ $product->pivot->id }}" class="btn btn-dark" onclick="changeQty(-1)">-</a>
+                                            <input type="number" id="qty_{{ $product->id }}" class="form-control text-center" value="{{ $product->pivot->qty ?? 1 }}" min="1" onchange="updateQty({{ $product->id }}, this.value)">
+
+                                            <a href="/addQty/{{ $product->pivot->id }}" class="btn btn-dark" onclick="changeQty(1)">+</a>
                                         </div>
-                                        <button class="btn btn-dark w-25" disabled><i class="bi bi-cart"></i></button>
+                                        <div class="wrapper-btn w-md-50 my-2 d-flex">
+                                            <form action="/cart/{{ $product->id }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-warning w-md-25"><i class="bi bi-back"></i></button>
+                                            </form>
+                                            <button class="btn btn-dark w-md-25 mx-2" disabled><i class="bi bi-cart"></i></button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -50,3 +50,12 @@
         </div>
     </div>
 @endsection
+
+                                   {{-- <p class="card-text">
+                                        @if ($product->pivot->is_checkout)
+                                            <span class="badge bg-success">Checked Out</span>
+                                        @else
+                                            <span class="badge bg-warning">Not Checked Out</span>
+                                        @endif
+                                    </p> --}}
+                                    <!-- Tombol disabled -->

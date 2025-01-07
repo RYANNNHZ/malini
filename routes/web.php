@@ -49,4 +49,6 @@ Route::resource('category',CategoryController::class)->middleware('is_baned');
 Route::resource('comment',CommentController::class)->middleware('is_baned');
 Route::resource('users',UsersController::class)->middleware('is_baned');
 Route::resource('cart',CartController::class)->middleware('isLogin');
+Route::get('/addQty/{id}',[CartController::class,'addQty']);
+Route::get('/minQty/{id}',[CartController::class,'minQty']);
 
