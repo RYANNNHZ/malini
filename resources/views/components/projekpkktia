@@ -1,0 +1,11 @@
+<?php
+session_start();
+include("koneksi.php");
+
+if(!isset($_GET['id'])){
+    echo "halaman tidak tersedia";
+}
+
+$id = $_GET["id"];
+
+$query = mysqli_query($koneksi, "select product.id, product.nama,kelas,jurusan")
