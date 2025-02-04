@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('/halamanlogin');
+    return redirect('/halamanlogin');
 });
 
 Route::get('/admin',[AdminController::class,'admin'])->middleware('isAdmin');
