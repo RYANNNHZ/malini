@@ -28,11 +28,9 @@
             <h3>{{ $price }}K</h3>
         </div>
         <div class="wrapper-addCart w-100 w-md-50 d-block d-md-flex">
-            @if (Auth::check())
             <a class="btn btn-dark w-100 my-1 my-md-0 rounded-5">checkout<i
                     class="mx-1 bi bi-basket-fill"></i></a>
 
-                    @if (Auth::user()->products->pivot->product_id != $id)
 
                     <form action="/cart" method="post" class="btn btn-dark w-100 my-1 my-md-0 rounded-5 ms-md-1">
                         @csrf
@@ -40,20 +38,6 @@
             <button class="btn btn-dark w-100 my-1 my-md-0 rounded-5 ms-md-1" type="submit">add cart<i
                     class="mx-1 bi bi-cart-check-fill"></i></button>
                 </form>
-                    @else
-
-                    @endif
-
-
-
-            @elseif(!Auth::check())
-            <a class="btn btn-dark w-100 my-1 my-md-0 rounded-5 disabled">checkout<i
-                class="mx-1 bi bi-basket-fill"></i></a>
-
-        <a class="btn btn-dark w-100 my-1 my-md-0 rounded-5 ms-md-1 disabled">add cart<i
-                class="mx-1 bi bi-cart-check-fill"></i></a>
-
-            @endif
 
         </div>
     </div>
