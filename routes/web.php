@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/halamanlogin');
+    return redirect('/product');
 });
 
 Route::get('/admin',[AdminController::class,'admin'])->middleware('isAdmin');
